@@ -1,17 +1,17 @@
 #!/bin/sh
-REPOSITORY_REGISTRY=$1
-REPOSITORY_IMAGE_URL=$2
-REPOSITORY_USER=$3
-REPOSITORY_TOKEN=$4
+ORIGIN_REGISTRY=$1
+ORIGIN_IMAGE_URL=$2
+ORIGIN_USER=$3
+ORIGIN_TOKEN=$4
 
-OS_REGISTRY=$5
-OS_IMAGE_URL=$6
-OS_USER=$7
-OS_TOKEN=$8
+TARGET_REGISTRY=$5
+TARGET_IMAGE_URL=$6
+TARGET_USER=$7
+TARGET_TOKEN=$8
 
-echo -n ${DOCKER_TOKEN} | docker login -u ${REPOSITORY_USER} --password-stdin ${REPOSITORY_REGISTRY}
-docker pull ${REPOSITORY_IMAGE_URL}
-echo -n ${OS_TOKEN} | docker login -u ${OS_USER} --password-stdin ${OS_REGISTRY}
-docker tag ${REPOSITORY_IMAGE_URL} ${OS_IMAGE_URL}
-docker push ${OS_IMAGE_URL}
+echo -n ${ORIGIN_TOKEN} | docker login -u ${ORIGIN_USER} --password-stdin ${ORIGIN_REGISTRY}
+docker pull ${ORIGIN_IMAGE_URL}
+echo -n ${TARGET_TOKEN} | docker login -u ${TARGET_USER} --password-stdin ${TARGET_REGISTRY}
+docker tag ${ORIGIN_IMAGE_URL} ${TARGET_IMAGE_URL}
+docker push ${TARGET_IMAGE_URL}
 docker logout

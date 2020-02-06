@@ -1,40 +1,40 @@
 name: 'Pull Docker Image from Registry and publish it to OpenShift'
 description: 'GitHub Action to pull Docker Images from GitHub Registry and publish them to OpenShift'
 inputs:
-  repository-registry:
+  origin-registry:
     description: 'Repository registry url'
     required: true
-  repository-image-url:
+  origin-image-url:
     description: 'Repository image Url'
     required: true
-  repository-user:
+  origin-user:
     description: 'Repository user'
     default: "publisher"
     required: false
-  repository-token:
+  origin-token:
     description: 'Repository token'
     required: true
-  os-registry:
+  target-registry:
     description: 'Repository registry url'
     required: true
-  os-image-url:
+  target-image-url:
     description: 'Repository image Url'
     required: true
-  os-user:
+  target-user:
     description: 'Repository user'
     required: true
-  os-token:
+  target-token:
     description: 'Repository token'
     required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.repository-registry }}
-    - ${{ inputs.repository-image-url }}
-    - ${{ inputs.repository-user }}
-    - ${{ inputs.repository-token }}
-    - ${{ inputs.os-registry }}
-    - ${{ inputs.os-image-url }}
-    - ${{ inputs.os-user }}
-    - ${{ inputs.os-token }}
+    - ${{ inputs.origin-registry }}
+    - ${{ inputs.origin-image-url }}
+    - ${{ inputs.origin-user }}
+    - ${{ inputs.origin-token }}
+    - ${{ inputs.target-registry }}
+    - ${{ inputs.target-image-url }}
+    - ${{ inputs.target-user }}
+    - ${{ inputs.target-token }}
