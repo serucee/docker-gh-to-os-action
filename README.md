@@ -1,4 +1,6 @@
-# Docker GitHub Registry to OpenShift action
+# Docker registry to different registry action
+
+For example to pull from GitHub repository and push to OpenShift registry.
 
 ## Inputs
 
@@ -41,7 +43,7 @@ target-token:
 ## Example usage
 
 ```yaml
-- name: Publish latest docker image to OpenShift
+- name: Publish latest docker image to registry
   uses: serucee/docker-registry-to-registry-action@master
   with:
     origin-registry: docker.pkg.github.com
