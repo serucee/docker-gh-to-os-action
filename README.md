@@ -1,6 +1,6 @@
 # Docker registry to different registry action
 
-For example to pull from GitHub repository and push to OpenShift registry.
+For example to pull from GitHub registry and push to OpenShift registry.
 
 ## Inputs
 
