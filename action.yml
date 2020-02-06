@@ -1,15 +1,40 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Pull Docker Image from Registry and publish it to OpenShift'
+description: 'GitHub Action to pull Docker Images from GitHub Registry and publish them to OpenShift'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  repository-registry:
+    description: 'Repository registry url'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  repository-image-url:
+    description: 'Repository image Url'
+    required: true
+  repository-user:
+    description: 'Repository user'
+    default: "publisher"
+    required: false
+  repository-token:
+    description: 'Repository token'
+    required: true
+  os-registry:
+    description: 'Repository registry url'
+    required: true
+  os-image-url:
+    description: 'Repository image Url'
+    required: true
+  os-user:
+    description: 'Repository user'
+    required: true
+  os-token:
+    description: 'Repository token'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.repository-registry }}
+    - ${{ inputs.repository-image-url }}
+    - ${{ inputs.repository-user }}
+    - ${{ inputs.repository-token }}
+    - ${{ inputs.os-registry }}
+    - ${{ inputs.os-image-url }}
+    - ${{ inputs.os-user }}
+    - ${{ inputs.os-token }}
