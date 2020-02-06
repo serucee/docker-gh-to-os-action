@@ -6,7 +6,7 @@ For example to pull from GitHub registry and push to OpenShift registry.
 
 ```yaml
 origin-registry:
-  description: 'Registry registry url'
+  description: 'Registry url'
   required: true
 
 origin-image-url:
@@ -23,7 +23,7 @@ origin-token:
   required: true
 
 target-registry:
-  description: 'Registry registry url'
+  description: 'Registry url'
   required: true
 
 target-image-url:
