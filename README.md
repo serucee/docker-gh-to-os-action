@@ -6,36 +6,36 @@ For example to pull from GitHub registry and push to OpenShift registry.
 
 ```yaml
 origin-registry:
-  description: 'Repository registry url'
+  description: 'Registry registry url'
   required: true
 
 origin-image-url:
-  description: 'Repository image url'
+  description: 'Registry image url'
   required: true
 
 origin-user:
-  description: 'Repository user'
+  description: 'Registry user'
   default: "publisher"
   required: false
 
 origin-token:
-  description: 'Repository token'
+  description: 'Registry token'
   required: true
 
 target-registry:
-  description: 'Repository registry url'
+  description: 'Registry registry url'
   required: true
 
 target-image-url:
-  description: 'Repository image url'
+  description: 'Registry image url'
   required: true
 
 target-user:
-  description: 'Repository user'
+  description: 'Registry user'
   required: true
 
 target-token:
-  description: 'Repository token'
+  description: 'Registry token'
   required: true
 ```
 
